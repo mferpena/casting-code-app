@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copia los archivos necesarios al contenedor
 COPY html_to_css.py .
+COPY json_to_java.py .
 COPY main.py .
 COPY requirements.txt .
 
