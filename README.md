@@ -6,12 +6,12 @@ docker build -t html-to-css-app .
 ```
 # Ejecutar el contenedor
 ```sh
-docker run -p 5000:5000 html-to-css-app
+docker run -d -p 5000:5000 html-to-css-app
 ```
 
 # cUrl
 ```sh
 curl --location 'http://localhost:5000/process_html' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'text=<div class="main-container">'
+--header 'Content-Type: text/plain' \
+--data '<div class="main-container">'
 ```

@@ -7,14 +7,14 @@ app = Flask(__name__)
 
 @app.route('/process_html', methods=['POST'])
 def process_html():
-    if 'text' not in request.form:
-        return jsonify({'error': 'The request must contain a "text" field'}), 400
+    try:
+        html = request.get_data(as_text=True)
+        if not html:
+            raise ValueError("The request must contain a \"text\" field")
 
-    html = request.form['text']
-
-    print("200")
-    # return jsonify({'success': main(html)}), 200
-    return main(html), 200
+        return main(html), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
 
 
 if __name__ == "__main__":
