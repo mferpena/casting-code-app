@@ -32,3 +32,27 @@ curl --location 'http://127.0.0.1:5000/json_to_java' \
 }
 '
 ```
+
+## Casting JSON to YAML
+
+```sh
+curl --location 'http://127.0.0.1:5000/json_to_yaml' \
+--header 'Content-Type: application/json' \
+--data '{
+    "squadName": "Justice League",
+    "homeTown": "Gotham",
+    "formed": 2010,
+    "secretBase": "Batcave",
+    "members": [
+        {
+            "name": "Batman",
+            "age": 35,
+            "secretIdentity": "Bruce Wayne",
+            "powers": [
+                "Rich",
+                "Gadgets"
+            ]
+        }
+    ]
+}'
+```
